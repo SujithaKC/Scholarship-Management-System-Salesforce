@@ -1,41 +1,45 @@
 <template>
 
     <template if:true={scheme}>
-        <lightning-button
-            label="Back"
-            variant="neutral"
-            onclick={handleBack}
-            class="slds-m-bottom_medium">
-        </lightning-button>
-
-
-        <lightning-card title={scheme.Name}>
-
-            <p><b>Course Eligible:</b> {scheme.Course_Eligible__c}</p>
-
-            <p><b>Admission Type:</b> {scheme.Admission_Type__c}</p>
-
-            <p><b>Eligible Study Year:</b> {scheme.Eligible_Study_Year__c}</p>
-
-            <p><b>Maximum Family Income:</b> {scheme.Maximum_Family_Income__c}</p>
-
-            <p><b>Minimum Marks Required:</b> {scheme.Minimum_Marks_Required__c}</p>
-
-            <p><b>Minimum Attendance Required:</b> {scheme.Minimum_Attendance_Required__c}</p>
-
-            <p><b>Gender Eligible:</b> {scheme.Gender_Eligible__c}</p>
-
-            <p><b>Community Eligible:</b> {scheme.Community_Eligible__c}</p>
-
-            <p><b>Description:</b> {scheme.Description__c}</p>
-
-            <br>
-
+        <div class="slds-p-horizontal_small slds-p-top_small">
             <lightning-button
-                label="Apply"
-                variant="brand"
-                onclick={applyScholarship}>
+                label="Back"
+                variant="neutral"
+                onclick={handleBack}
+                icon-name="utility:back">
             </lightning-button>
+        </div>
+
+        <lightning-card title={scheme.Name} class="slds-m-around_small">
+
+            <div class="slds-grid slds-gutters slds-wrap">
+                <!-- Eligibility Criteria Section -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <h2 class="slds-text-heading_small slds-p-bottom_x-small">Eligibility Criteria</h2>
+                    <p class="slds-p-bottom_x-small"><b>Course Eligible:</b> {scheme.Course_Eligible__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Admission Type:</b> {scheme.Admission_Type__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Eligible Study Year:</b> {scheme.Eligible_Study_Year__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Maximum Family Income:</b> {scheme.Maximum_Family_Income__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Minimum Marks Required:</b> {scheme.Minimum_Marks_Required__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Minimum Attendance Required:</b> {scheme.Minimum_Attendance_Required__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Gender Eligible:</b> {scheme.Gender_Eligible__c}</p>
+                    <p class="slds-p-bottom_x-small"><b>Community Eligible:</b> {scheme.Community_Eligible__c}</p>
+                </div>
+
+                <!-- Description Section -->
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <h2 class="slds-text-heading_small slds-p-bottom_x-small">Description</h2>
+                    <p class="slds-p-bottom_x-small">{scheme.Description__c}</p>
+                </div>
+            </div>
+
+            <div class="slds-p-top_medium">
+                <lightning-button
+                    label="Apply"
+                    variant="brand"
+                    onclick={applyScholarship}>
+                </lightning-button>
+            </div>
 
         </lightning-card>
 
