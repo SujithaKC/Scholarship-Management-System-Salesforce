@@ -1,0 +1,120 @@
+<template>
+    <lightning-card title="Scholarship Application">
+
+        <div class="slds-p-horizontal_small slds-p-top_small">
+            <lightning-button
+                variant="neutral"
+                label="Back"
+                onclick={handleBack}
+                icon-name="utility:back">
+            </lightning-button>
+        </div>
+
+        <lightning-record-edit-form
+            object-api-name="Scholarship_Application__c"
+            onsuccess={handleSuccess}
+            onsubmit={handleSubmit}>
+
+            <lightning-messages></lightning-messages>
+
+            <lightning-input-field field-name="Scholarship_Scheme__c"
+                                   value={schemeId}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="Student_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Roll_Number__c"></lightning-input-field>
+            <lightning-input-field field-name="Date_of_Birth__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Gender__c"
+                                   onchange={handleFieldChange}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="Religion__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Community_Caste__c"
+                                   onchange={handleFieldChange}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="Course__c"></lightning-input-field>
+            <lightning-input-field field-name="Academic_Year__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Current_Year__c"
+                                   onchange={handleFieldChange}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="Institution__c"></lightning-input-field>
+            <lightning-input-field field-name="Date_of_Joining__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Previous_Qualification__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Previous_Year_Percentage__c"
+                                   onchange={handleFieldChange}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="Attendance_Percentage__c"
+                                   onchange={handleFieldChange}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="Counselling_Number__c"></lightning-input-field>
+
+            <lightning-input-field field-name="X10th_Register_Number__c"></lightning-input-field>
+            <lightning-input-field field-name="X12th_Register_Number__c"></lightning-input-field>
+            <lightning-input-field field-name="Aadhaar_Number__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Annual_Family_Income__c"
+                                   onchange={handleFieldChange}>
+            </lightning-input-field>
+
+            <lightning-input-field field-name="First_Graduate_in_Family__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Father_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Father_Occupation__c"></lightning-input-field>
+            <lightning-input-field field-name="Father_Mobile__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Mother_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Mother_Occupation__c"></lightning-input-field>
+            <lightning-input-field field-name="Mother_Mobile__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Permanent_Address__c"></lightning-input-field>
+            <lightning-input-field field-name="Current_Address__c"></lightning-input-field>
+            <lightning-input-field field-name="Distance_to_College__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Student_Mobile__c"></lightning-input-field>
+            <lightning-input-field field-name="Email_ID__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Bank_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Branch__c"></lightning-input-field>
+            <lightning-input-field field-name="Account_Number__c"></lightning-input-field>
+            <lightning-input-field field-name="IFSC_Code__c"></lightning-input-field>
+            <lightning-input-field field-name="MICR_Code__c"></lightning-input-field>
+
+            <lightning-input-field field-name="Hosteller__c"></lightning-input-field>
+            <lightning-input-field field-name="Disability_Percentage__c"></lightning-input-field>
+            <lightning-input-field field-name="CAPF_Ward__c"></lightning-input-field>
+            <lightning-input-field field-name="Orphan__c"></lightning-input-field>
+            <lightning-input-field field-name="COVID_Parent_Loss__c"></lightning-input-field>
+
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    type="submit"
+                    variant="brand"
+                    label="Submit Application">
+                </lightning-button>
+            </div>
+
+        </lightning-record-edit-form>
+
+        <template if:true={isEligible}>
+            <div class="slds-text-color_success slds-p-around_small">
+                Eligible for this scholarship
+            </div>
+        </template>
+
+        <template if:false={isEligible}>
+            <div class="slds-text-color_error slds-p-around_small">
+                {errorMessage}
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

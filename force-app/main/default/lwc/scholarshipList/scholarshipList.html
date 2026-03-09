@@ -1,0 +1,24 @@
+<template>
+
+    <lightning-card title="Available Scholarships">
+
+        <template for:each={scholarships} for:item="sch">
+
+            <div key={sch.Id} class="slds-box slds-m-around_small">
+
+                <h3>{sch.Name}</h3>
+
+                <lightning-button
+                    label="View Details"
+                    variant="brand"
+                    data-id={sch.Id}
+                    onclick={viewDetails}>
+                </lightning-button>
+
+            </div>
+
+        </template>
+
+    </lightning-card>
+
+</template>

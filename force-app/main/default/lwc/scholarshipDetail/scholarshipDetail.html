@@ -1,0 +1,44 @@
+<template>
+
+    <template if:true={scheme}>
+        <lightning-button
+            label="Back"
+            variant="neutral"
+            onclick={handleBack}
+            class="slds-m-bottom_medium">
+        </lightning-button>
+
+
+        <lightning-card title={scheme.Name}>
+
+            <p><b>Course Eligible:</b> {scheme.Course_Eligible__c}</p>
+
+            <p><b>Admission Type:</b> {scheme.Admission_Type__c}</p>
+
+            <p><b>Eligible Study Year:</b> {scheme.Eligible_Study_Year__c}</p>
+
+            <p><b>Maximum Family Income:</b> {scheme.Maximum_Family_Income__c}</p>
+
+            <p><b>Minimum Marks Required:</b> {scheme.Minimum_Marks_Required__c}</p>
+
+            <p><b>Minimum Attendance Required:</b> {scheme.Minimum_Attendance_Required__c}</p>
+
+            <p><b>Gender Eligible:</b> {scheme.Gender_Eligible__c}</p>
+
+            <p><b>Community Eligible:</b> {scheme.Community_Eligible__c}</p>
+
+            <p><b>Description:</b> {scheme.Description__c}</p>
+
+            <br>
+
+            <lightning-button
+                label="Apply"
+                variant="brand"
+                onclick={applyScholarship}>
+            </lightning-button>
+
+        </lightning-card>
+
+    </template>
+
+</template>

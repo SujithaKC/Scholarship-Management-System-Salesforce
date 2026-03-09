@@ -1,0 +1,24 @@
+<template>
+
+<template if:true={showList}>
+    <c-scholarship-list
+        onviewdetail={handleDetail}>
+    </c-scholarship-list>
+</template>
+
+<template if:true={showDetail}>
+    <c-scholarship-detail
+        scheme-id={selectedScheme}
+        onapply={handleApply}
+        onback={handleBack}>
+    </c-scholarship-detail>
+</template>
+
+<template if:true={showApplication}>
+    <c-scholarship-application-form
+        scheme-id={selectedScheme}
+        onback={handleBack}>
+    </c-scholarship-application-form>
+</template>
+
+</template>
