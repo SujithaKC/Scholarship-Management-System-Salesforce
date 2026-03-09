@@ -1,0 +1,107 @@
+<template>
+
+    <lightning-card title="Scholarship Recommendation Engine">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-input label="Family Income (INR)"
+                             type="number"
+                             onchange={handleInput}
+                             data-field="income"
+                             placeholder="Enter annual family income">
+            </lightning-input>
+
+            <lightning-input label="Marks (%)"
+                             type="number"
+                             onchange={handleInput}
+                             data-field="marks"
+                             placeholder="Enter percentage obtained">
+            </lightning-input>
+
+            <lightning-input label="Attendance (%)"
+                             type="number"
+                             onchange={handleInput}
+                             data-field="attendance"
+                             placeholder="Enter attendance percentage">
+            </lightning-input>
+
+            <lightning-combobox label="Gender"
+                                options={genderOptions}
+                                onchange={handleInput}
+                                data-field="gender"
+                                placeholder="Select gender">
+            </lightning-combobox>
+
+            <lightning-combobox label="Community"
+                                options={communityOptions}
+                                onchange={handleInput}
+                                data-field="community"
+                                placeholder="Select community">
+            </lightning-combobox>
+
+            <lightning-combobox label="Study Year"
+                                options={yearOptions}
+                                onchange={handleInput}
+                                data-field="year"
+                                placeholder="Select current year">
+            </lightning-combobox>
+
+            <br>
+
+            <lightning-button
+                variant="brand"
+                label="Find Scholarships"
+                onclick={findScholarships}>
+            </lightning-button>
+
+        </div>
+
+        <template if:true={showNoResultsMessage}>
+            <div class="slds-p-around_medium slds-text-align_center">
+                <p class="slds-text-heading_small slds-text-color_error">Sorry, you are not eligible for any scholarships based on your profile.</p>
+                <p class="slds-text-body_small">Please check back later or contact our support team for assistance.</p>
+            </div>
+        </template>
+
+        <template if:true={scholarships}>
+            <template if:true={hasScholarships}>
+
+                <div class="slds-p-around_medium">
+
+                    <p class="slds-text-heading_small slds-m-bottom_small">Recommended Scholarships ({scholarships.length})</p>
+
+                    <template for:each={scholarships} for:item="sch">
+
+                        <div key={sch.Id} class="slds-box slds-m-bottom_small slds-theme_default">
+
+                            <div class="slds-grid slds-grid_vertical">
+                                <h3 class="slds-text-heading_small">{sch.Name}</h3>
+                                <p class="slds-text-body_small">{sch.Description__c}</p>
+                                <div class="slds-m-top_small">
+                                    <lightning-button
+                                        label="View Details"
+                                        variant="brand"
+                                        data-id={sch.Id}
+                                        onclick={viewDetails}>
+                                    </lightning-button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </template>
+
+                </div>
+
+            </template>
+        </template>
+
+        <template if:false={scholarships}>
+            <div class="slds-p-around_medium slds-text-align_center">
+                <p class="slds-text-body_small slds-text-color_weak">Enter your details and click "Find Scholarships" to see recommendations</p>
+            </div>
+        </template>
+
+    </lightning-card>
+
+</template>

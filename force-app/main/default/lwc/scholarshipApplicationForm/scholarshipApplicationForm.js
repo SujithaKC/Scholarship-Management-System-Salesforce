@@ -75,6 +75,8 @@ export default class ScholarshipApplicationForm extends LightningElement {
         })
         .catch(error=>{
             console.error(error);
+            this.isEligible = false;
+            this.errorMessage = 'An error occurred while checking eligibility. Please try again.';
         });
     }
 
@@ -86,7 +88,7 @@ export default class ScholarshipApplicationForm extends LightningElement {
             fields.Scholarship_Scheme__c = this.schemeId;
         }
 
-        if (!this.isEligible) {
+        if (!this.isEligible && this.schemeId) {
 
             event.preventDefault();
 

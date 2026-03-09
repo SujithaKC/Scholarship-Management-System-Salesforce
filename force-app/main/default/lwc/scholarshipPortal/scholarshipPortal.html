@@ -1,6 +1,9 @@
 <template>
 
 <template if:true={showList}>
+    <c-scholarship-recommendation
+        onviewdetail={handleDetail}>
+    </c-scholarship-recommendation>
     <c-scholarship-list
         onviewdetail={handleDetail}>
     </c-scholarship-list>
