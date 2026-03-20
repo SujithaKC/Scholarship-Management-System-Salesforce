@@ -1,18 +1,29 @@
-# Salesforce DX Project: Next Steps
+# Scholarship Management System
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Overview
+A Lightning Web Component (LWC) application for managing scholarship programs and student applications.
 
-## How Do You Plan to Deploy Your Changes?
+## Features
+- Student scholarship application management
+- Application status tracking
+- Scholarship award administration
+- Document management
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Installation
+1. Clone the repository
+2. Deploy to your Salesforce org
+3. Assign required permissions to users
 
-## Configure Your Salesforce DX Project
+## Usage
+Navigate to the Scholarship Management app and manage applications through the LWC interface.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Technologies
+- Salesforce Lightning Web Components
+- Apex
+- SOQL
 
-## Read All About It
+## Support
+For issues or questions, contact your system administrator.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+---
+*Customize this README with your specific project details, features, setup instructions, and contribution guidelines.*
