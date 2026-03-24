@@ -1,0 +1,48 @@
+<template>
+    <div class="dashboard">
+
+        <!-- 🔥 KPI CARDS -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Total Fund</h3>
+                <p>₹{kpi.totalFund}</p>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Total Students</h3>
+                <p>{kpi.totalStudents}</p>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Avg Fund</h3>
+                <p>₹{kpi.avgFund}</p>
+            </div>
+
+            <div class="kpi-card">
+                <h3>Avg Students</h3>
+                <p>{kpi.avgStudents}</p>
+            </div>
+        </div>
+
+        <!-- 📊 CHARTS -->
+        <div class="chart-grid">
+
+            <div class="chart-box">
+                <h3>Students Trend</h3>
+                <canvas class="lineChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h3>Fund by Year</h3>
+                <canvas class="barChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h3>Fund Distribution</h3>
+                <canvas class="pieChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+</template>
