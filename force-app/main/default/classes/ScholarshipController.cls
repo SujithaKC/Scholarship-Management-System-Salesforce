@@ -1,6 +1,4 @@
-
-
-public with sharing class ScholarshipController {
+public without sharing class ScholarshipController{
 
     @AuraEnabled(cacheable=true)
     public static List<Scholarship_Scheme__c> getActiveScholarships() {
@@ -18,6 +16,7 @@ public with sharing class ScholarshipController {
             FROM Scholarship_Scheme__c
             WHERE Status__c = 'Active'
             ORDER BY Name
+            LIMIT 500
         ];
     }
 
@@ -69,6 +68,7 @@ public static List<Scholarship_Scheme__c> recommendScholarships(
                Eligible_Study_Year__c
         FROM Scholarship_Scheme__c
         WHERE Status__c = 'Active'
+        LIMIT 2000
     ];
 
     List<Scholarship_Scheme__c> recommended = new List<Scholarship_Scheme__c>();

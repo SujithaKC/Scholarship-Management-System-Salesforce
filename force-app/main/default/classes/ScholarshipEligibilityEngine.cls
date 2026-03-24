@@ -1,4 +1,4 @@
-public with sharing class ScholarshipEligibilityEngine {
+public without sharing class ScholarshipEligibilityEngine{
 
     @AuraEnabled
     public static String checkEligibility(
